@@ -2,7 +2,7 @@ import getpass
 from pytube import YouTube
 
 user = getpass.getuser()
-default_path = f"C:/User/{user}/Downloads"
+default_path = f"C:/Users/{user}/Downloads"
 
 def GetNameFile(link):
     video = YouTube(link)
@@ -22,3 +22,6 @@ def DownloadVideoInLow(link, path):
 def DownloadAudioOnly(link, path):
     video = YouTube(link)
     return video.streams.get_audio_only().download(output_path=path, filename=video.title+".mp3")
+def DownloadCustomResolution(resolution, link, path):
+    video = YouTube(link)
+    return video.streams.get_by_resolution(resolution=resolution).download(output_path=path)
