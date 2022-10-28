@@ -1,7 +1,6 @@
 from pytube import YouTube
 import getpass
 import os
-
 user = getpass.getuser()
 video = YouTube("https://www.youtube.com/watch?v=XICabZgt8RE")
 default_path = f"C:/Users/{user}/Downloads"
